@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Concessionária Virtual - Consultor Francisco</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <div class="container">
+        <div class="sidebar">
+            <h2><i class="fa-solid fa-sliders"></i> Painel do Consultor</h2>
+            <div>
+                <label for="apiKey">OpenRouter API Key:</label>
+                <input type="password" id="apiKey" placeholder="sk-or-v1-...">
+            </div>
+            <div>
+                <label for="modelSelect">Modelo de IA:</label>
+                <select id="modelSelect"></select>
+            </div>
+            <p style="font-size: 0.75rem; color: var(--text-light);">A IA responderá seguindo os frameworks COSTAR e ROA configurados para o Francisco.</p>
+        </div>
+
+        <div class="chat-area">
+            <div class="chat-header">
+                <div class="header-avatar">
+                    <i class="fa-solid fa-user-tie"></i>
+                    <span class="online-status"></span>
+                </div>
+                <div class="header-info">
+                    <h1>Francisco - Consultor de Vendas</h1>
+                    <p><i class="fa-solid fa-car"></i> Especialista em Veículos Novos e Seminovos</p>
+                </div>
+            </div>
+
+            <div class="chat-messages" id="chatMessages">
+                <div class="message-wrapper agent">
+                    <div class="chat-icon"><i class="fa-solid fa-user-tie"></i></div>
+                    <div class="message">Olá! Sou o Francisco, seu consultor de veículos. Estou aqui para te ajudar a encontrar o carro ideal para a sua rotina e bolso, sem pressa. Me conta, o que você está buscando hoje?</div>
+                </div>
+                
+                <div class="typing" id="typingIndicator">
+                    <i class="fa-solid fa-circle-notch fa-spin"></i> Francisco está pensando...
+                </div>
+            </div>
+
+            <div class="chat-input-area">
+                <input type="text" id="userInput" placeholder="Digite sua mensagem..." onkeypress="handleKeyPress(event)">
+                <button onclick="sendMessage()"><i class="fa-solid fa-paper-plane"></i></button>
+            </div>
+        </div>
+    </div>
+
+    <script src="config.js"></script>
+    <script src="prompt.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>
